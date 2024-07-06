@@ -6,18 +6,53 @@
         {
             "type":"prompt",
             "alignment": "left",
-            "segments": [] 
+            "segments": [
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "properties": {
+
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "properties": {
+                        
+                    }
+                }
+            ] 
         },
         {
             "type": "prompt",
             "alignment": "right",
-            "segments": []
+            "segments": [
+                {
+                    "type": "executiontime",
+                    "style": "diamond",
+                    "properties": {
+
+                    }
+                },
+                {
+                    "type": "time",
+                    "style": "diamond",
+                    "properties": {
+                        
+                    }
+                }
+            ]
         },
         {
             "type": "prompt",
             "alignment": "left",
             "newline": true,
-            "segments": []
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain"
+                }
+            ]
         
         }
     ]
