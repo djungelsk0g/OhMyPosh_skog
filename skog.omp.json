@@ -58,7 +58,9 @@
             "segments": [
                 {
                     "type": "text",
-                    "style": "plain"
+                    "style": "plain",
+                    "foreground": "#4490f0",
+                    "template": "╰𝈳"
                 }
             ]
         
