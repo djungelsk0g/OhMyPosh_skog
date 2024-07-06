@@ -8,13 +8,28 @@
             "alignment": "left",
             "segments": [
                 {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#4490f0",
+                    "template": "╭"
+                },
+                {
+                    "type": "text",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B4",
+                    "foreground": "#a8bcd7",
+                    "background": "#456047",
+                    "template": "\uf489 "
+                },
+                {
                     "type": "path",
                     "style": "diamond",
-                    "leading_diamond": "╭\uE0B6",
+                    "leading_diamond": "",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#1f2939",
-                    "background": "#4490f0",
-                    "template": "\uf07c {{ .Path }}",
+                    "foreground": "#253145",
+                    "background": "#3a7ccd",
+                    "template": " \uf07c {{ .Path }}",
                     "properties": {
                         "style": "agnoster_short",
                         "folder_separator_icon": "/",
