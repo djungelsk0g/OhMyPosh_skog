@@ -40,6 +40,10 @@
                 {
                     "type": "git",
                     "style": "diamond",
+                    "background": "#46676d",
+                    "foreground": "#000000",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\uE0B4",
                     "properties": {
                         
                     }
