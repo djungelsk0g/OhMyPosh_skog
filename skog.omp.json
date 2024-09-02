@@ -10,7 +10,7 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#4490f0",
+                    "foreground": "#8ab6ec",
                     "template": "╭"
                 },
                 {
@@ -18,8 +18,8 @@
                     "style": "diamond",
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#a8bcd7",
-                    "background": "#456047",
+                    "foreground": "#68a194",
+                    "background": "#37554e",
                     "template": "\uf489 "
                 },
                 {
@@ -27,8 +27,8 @@
                     "style": "diamond",
                     "leading_diamond": "",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#253145",
-                    "background": "#3a7ccd",
+                    "foreground": "#1c2534",
+                    "background": "#8ab6ec",
                     "template": " \uf07c {{ .Path }}",
                     "properties": {
                         "style": "agnoster_short",
@@ -74,7 +74,7 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#4490f0",
+                    "foreground": "#8ab6ec",
                     "template": "╰𝈳"
                 }
             ]
