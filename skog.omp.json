@@ -20,7 +20,7 @@
                     "trailing_diamond": "\uE0B4",
                     "foreground": "#68a194",
                     "background": "#37554e",
-                    "template": "\uf489 "
+                    "template": "{{if .Segments.Git.RepoName}}\uf09b {{else}}\uf489 {{end}}"
                 },
                 {
                     "type": "path",
@@ -42,10 +42,12 @@
                     "style": "diamond",
                     "background": "#46676d",
                     "foreground": "#000000",
-                    "leading_diamond": "",
+                    "leading_diamond": " \uE0B6",
                     "trailing_diamond": "\uE0B4",
                     "properties": {
-                        
+                        "branch_icon": "\uf126 ",
+                        "fetch_status": true,
+                        "fetch_stash_count": true
                     }
                 }
             ] 
