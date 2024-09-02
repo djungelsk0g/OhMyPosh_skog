@@ -27,7 +27,7 @@
                     "style": "diamond",
                     "leading_diamond": "",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#1c2534",
+                    "foreground": "#000000",
                     "background": "#8ab6ec",
                     "template": " \uf07c {{ .Path }}",
                     "properties": {
