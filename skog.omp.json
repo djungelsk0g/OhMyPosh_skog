@@ -7,13 +7,13 @@
         "light-sage-fg": "#68a194",
         "dark-sage-bg": "#37554e",
         "git-normal": "#46676d",
-        "git-ahead": "#26c628",
+        "git-ahead": "#8ac48b",
         "git-behind": "#FFA06D",
-        "git-ahead-behind": "#C0CFFF",
-        "git-staging": "#FFD740",
-        "git-staging-working": "#FFB2FF",
-        "git-upstream-gone": "#ff0000",
-        "git-working": "#84ffcc"
+        "git-ahead-behind": "#C4B27C",
+        "git-staging": "#ffe657",
+        "git-working": "#519ab2",
+        "git-staging-working": "#A8C084",
+        "git-upstream-gone": "#ff7272"
     },
     "version": 2,
     "blocks": [
