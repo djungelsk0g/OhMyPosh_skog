@@ -50,6 +50,9 @@
                 {
                     "type": "git",
                     "style": "diamond",
+                    "leading_diamond": " \uE0B6",
+                    "trailing_diamond": "\uE0B4",
+                    "foreground": "#000000",
                     "background": "p:git-normal",
                     "background_templates": [
                         "{{ if .UpstreamGone }}p:git-upstream-gone{{ end }}",
@@ -60,9 +63,6 @@
                         "{{ if and (gt .Ahead 0) (eq .Behind 0) }}p:git-ahead{{ end }}",
                         "{{ if and (eq .Ahead 0) (gt .Behind 0) }}p:git-behind{{ end }}"
                     ],
-                    "foreground": "#000000",
-                    "leading_diamond": " \uE0B6",
-                    "trailing_diamond": "\uE0B4",
                     "properties": {
                         "branch_icon": "\uf126 ",
                         "fetch_status": true,
@@ -78,15 +78,26 @@
                 {
                     "type": "executiontime",
                     "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B4 ",
+                    "foreground": "#68a194",
+                    "background": "#37554e",
+                    "template": "\uEBA2 {{ .FormattedMs }}",
                     "properties": {
-
+                        "always_enabled": true,
+                        "style": "austin"
                     }
                 },
                 {
                     "type": "time",
                     "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B4",
+                    "foreground": "#68a194",
+                    "background": "#37554e",
+                    "template": "{{ .CurrentDate | date .Format }}",
                     "properties": {
-                        
+                        "time_format": "15:04:05"
                     }
                 }
             ]
