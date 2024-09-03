@@ -18,25 +18,36 @@ else
 
 
 {{if and .Arg1 .Arg2}} both complete. {{else}} incomplete. {{end}}
+{{if .Arg1}} complete {{else}} incomplete {{end}}
 
-if upstream gone
-    upstream
+{{if .UpstreamGone}} p:git-upstream-gone {{else}} () {{end}}
+
+(
+{{if and (.Working.Changed) (.Staging.Changed)}} p:git-staging-working {{else if and (.Working.Changed) (not .Staging.Changed)}} p:git-working {{else if and (not .Working.Changed) (.Staging.Changed)}} p:git-staging {{else}} () {{end}}
+)
+
+(
+{{if and (gt .Ahead 0) (gt .Behind 0)}} p:git-ahead-behind {{else if and (gt .Ahead 0) (eq .Behind 0)}} p:git-ahead {{else if and (eq .Ahead 0) (gt .Behind 0)}} p:git-behind {{else}} p:git-normal {{end}}
+)
+
+if .UpstreamGone
+    p:git-upstream-gone
 else
-    if Working and staging
-        working and staging
-    else if working and not staging 
-        working
-    else if not working and staging 
-        staging
+    if and .Working.Changed .Staging.Changed
+        p:git-staging-working
+    else if and .Working.Changed not .Staging.Changed 
+        p:git-working
+    else if and not .Working.Changed .Staging.Changed 
+        p:git-staging
     else
-        if ahead and behind
-            ahead and behind
-        else if ahead and not behind 
-            ahead
-        else if not ahead and behind
-            behind
+        if and gt .Ahead 0 gt .Behind 0
+            p:git-ahead-behind
+        else if and gt .Ahead 0 eq .Behind 0 
+            p:git-ahead
+        else if and eq .Ahead 0 gt .Behind 0
+            p:git-behind
         else 
-            normal
+            p:git-normal
         end
     end
 end
