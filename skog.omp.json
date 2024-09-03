@@ -2,6 +2,10 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "final_space": true,
     "palette": {
+        "light-blue": "#8ab6ec",
+        "black-text": "#000000",
+        "light-sage-fg": "#68a194",
+        "dark-sage-bg": "#37554e",
         "git-normal": "#46676d",
         "git-ahead": "#26c628",
         "git-behind": "#FFA06D",
@@ -20,7 +24,7 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#8ab6ec",
+                    "foreground": "p:light-blue",
                     "template": "╭"
                 },
                 {
@@ -28,8 +32,8 @@
                     "style": "diamond",
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#68a194",
-                    "background": "#37554e",
+                    "foreground": "p:light-sage-fg",
+                    "background": "p:dark-sage-bg",
                     "template": "{{if .Segments.Git.RepoName}}\uf09b {{else}}\uf489 {{end}}"
                 },
                 {
@@ -37,8 +41,8 @@
                     "style": "diamond",
                     "leading_diamond": "",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#000000",
-                    "background": "#8ab6ec",
+                    "foreground": "p:black-text",
+                    "background": "p:light-blue",
                     "template": " \uf07c {{ .Path }}",
                     "properties": {
                         "style": "agnoster_short",
@@ -52,7 +56,7 @@
                     "style": "diamond",
                     "leading_diamond": " \uE0B6",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#000000",
+                    "foreground": "p:black-text",
                     "background": "p:git-normal",
                     "background_templates": [
                         "{{ if .UpstreamGone }}p:git-upstream-gone{{ end }}",
@@ -80,8 +84,8 @@
                     "style": "diamond",
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B4 ",
-                    "foreground": "#68a194",
-                    "background": "#37554e",
+                    "foreground": "p:light-sage-fg",
+                    "background": "p:dark-sage-bg",
                     "template": "\uEBA2 {{ .FormattedMs }}",
                     "properties": {
                         "always_enabled": true,
@@ -93,8 +97,8 @@
                     "style": "diamond",
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B4",
-                    "foreground": "#68a194",
-                    "background": "#37554e",
+                    "foreground": "p:light-sage-fg",
+                    "background": "p:dark-sage-bg",
                     "template": "{{ .CurrentDate | date .Format }}",
                     "properties": {
                         "time_format": "15:04:05"
@@ -110,7 +114,7 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#8ab6ec",
+                    "foreground": "p:light-blue",
                     "template": "╰𝈳"
                 }
             ]
