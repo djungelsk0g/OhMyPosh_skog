@@ -3,13 +3,13 @@
     "final_space": true,
     "palette": {
         "git-normal": "#46676d",
-        "git-ahead": "#6EFFFF",
+        "git-ahead": "#26c628",
         "git-behind": "#FFA06D",
         "git-ahead-behind": "#C0CFFF",
         "git-staging": "#FFD740",
         "git-staging-working": "#FFB2FF",
-        "git-upstream-gone": "#FF867F",
-        "git-working": "#84FFFF"
+        "git-upstream-gone": "#ff0000",
+        "git-working": "#84ffcc"
     },
     "version": 2,
     "blocks": [
@@ -50,8 +50,16 @@
                 {
                     "type": "git",
                     "style": "diamond",
-                    "background": "#46676d",
-                    "background_templates": ["{{ if .UpstreamGone }}#FF867F{{ else }}({{ if and (.Working.Changed) (.Staging.Changed) }}#FFB2FF{{ else if and (.Working.Changed) (not .Staging.Changed) }}#84FFFF{{ else if and (not .Working.Changed) (.Staging.Changed) }}#FFD740{{ else }}({{ if and (gt .Ahead 0) (gt .Behind 0) }}#C0CFFF{{ else if and (gt .Ahead 0) (eq .Behind 0) }}#6EFFFF{{ else if and (eq .Ahead 0) (gt .Behind 0) }}#FFA06D{{ else }}#46676d{{ end }}){{ end }}){{ end }}"],
+                    "background": "p:git-normal",
+                    "background_templates": [
+                        "{{ if .UpstreamGone }}p:git-upstream-gone{{ end }}",
+                        "{{ if and (.Working.Changed) (.Staging.Changed) }}p:git-staging-working{{ end }}",
+                        "{{ if and (not .Working.Changed) (.Staging.Changed) }}p:git-staging{{ end }}",
+                        "{{ if and (not .Staging.Changed) (.Working.Changed) }}p:git-working{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:git-ahead-behind{{ end }}",
+                        "{{ if and (gt .Ahead 0) (eq .Behind 0) }}p:git-ahead{{ end }}",
+                        "{{ if and (eq .Ahead 0) (gt .Behind 0) }}p:git-behind{{ end }}"
+                    ],
                     "foreground": "#000000",
                     "leading_diamond": " \uE0B6",
                     "trailing_diamond": "\uE0B4",
