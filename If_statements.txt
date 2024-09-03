@@ -17,8 +17,26 @@ else
     if stage and not work
 
 
-"{{ if and (.Working.Changed) (.Staging.Changed)}} p:git-staging-working {{else}} (*******) {{end}}",
-"{{ if and (.Working.Changed) (not .Staging.Changed) }} p:git-working {{else if and (not .Working.Changed) ( .Staging.Changed) }} p:git-staging {{end}}",
+{{if and .Arg1 .Arg2}} both complete. {{else}} incomplete. {{end}}
 
-"{{ if and (gt .Ahead 0) (gt .Behind 0)}} p:git-ahead-behind {{else}} (*******) {{end}}"
-"{{ if and (gt .Ahead 0) (eq .Behind 0) }} p:git-ahead {{else if and (eq .Ahead 0) (gt .Behind 0) }} p:git-behind {{end}}",
+if upstream gone
+    upstream
+else
+    if Working and staging
+        working and staging
+    else if working and not staging 
+        working
+    else if not working and staging 
+        staging
+    else
+        if ahead and behind
+            ahead and behind
+        else if ahead and not behind 
+            ahead
+        else if not ahead and behind
+            behind
+        else 
+            normal
+        end
+    end
+end
